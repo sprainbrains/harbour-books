@@ -1,3 +1,13 @@
 harbour-books.pro.user*
 tests.pro.user
 build
+*.o
+moc_*.cpp
+*.moc
+Makefile
+*.a
+*.list
+org.monich.harbour.books*.qm
+org.monich.harbour.books*.ts
+org.monich.harbour.books
+RPMS/

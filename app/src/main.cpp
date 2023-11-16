@@ -61,7 +61,7 @@
 #include "ZLibrary.h"
 #include "ZLLanguageUtil.h"
 
-#include <sailfishapp.h>
+#include <auroraapp.h>
 
 #include <QGuiApplication>
 #include <QQuickView>
@@ -83,7 +83,7 @@
 
 Q_DECL_EXPORT int main(int argc, char **argv)
 {
-    QGuiApplication* app = SailfishApp::application(argc, argv);
+    QGuiApplication* app = Aurora::Application::application(argc, argv);
 
     qRegisterMetaType<BooksPos>();
     qRegisterMetaType<BooksColorScheme>();
@@ -116,9 +116,10 @@ Q_DECL_EXPORT int main(int argc, char **argv)
 #ifdef OPENREPOS
     QString transDir("/usr/share/translations");
 #else
-    QString transDir = SailfishApp::pathTo("translations").toLocalFile();
+    QString transDir = Aurora::Application::pathTo("translations").toLocalFile();
 #endif
     QString transFile(BOOKS_APP_NAME);
+    
     if (translator->load(locale, transFile, "-", transDir) ||
         translator->load(transFile, transDir)) {
         app->installTranslator(translator);
@@ -137,7 +138,7 @@ Q_DECL_EXPORT int main(int argc, char **argv)
             BOOKS_QML_FILE));
         HDEBUG("qml file" << qPrintable(qml));
 
-        QQuickView* view = SailfishApp::createView();
+        QQuickView* view = Aurora::Application::createView();
         QQmlContext* root = view->rootContext();
         QQmlEngine* engine = root->engine();
         QSharedPointer<BooksSettings> settings = BooksSettings::sharedInstance();

@@ -10,13 +10,11 @@ Name[pt_BR]=Livros
 Name[ru]=Книги
 Name[sv]=Böcker
 Comment=E-Book Reader
-Exec=harbour-books
-Icon=harbour-books
+Exec=org.monich.harbour.books
+Icon=org.monich.harbour.books
 X-Nemo-Application-Type=silica-qt5
 
-[X-Sailjail]
+[X-Application]
 Permissions=Documents;Downloads;RemovableMedia;Audio
-
-[X-HarbourBackup]
-BackupPathList=.local/share/harbour-books/:Documents/Books/
-BackupConfigList=/apps/harbour-books/
+OrganizationName=org.monich
+ApplicationName=harbour.books

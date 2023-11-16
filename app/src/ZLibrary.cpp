@@ -50,7 +50,7 @@
 #include "formats/xhtml/XHTMLReader.h"
 #include "library/Tag.h"
 
-#include <sailfishapp.h>
+#include <auroraapp.h>
 #include <MGConfItem>
 
 #include <QGuiApplication>

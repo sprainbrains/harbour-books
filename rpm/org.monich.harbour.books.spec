@@ -1,16 +1,16 @@
-Name:           harbour-books
+Name:           org.monich.harbour.books
 Summary:        E-book reader
 Version:        1.1.5
 Release:        1
 License:        BSD
 Group:          Applications/File
-URL:            http://github.com/monich/harbour-books
+URL:            https://github.com/sprainbrains/harbour-books/tree/auroraos
 Source0:        %{name}-%{version}.tar.gz
 
 Requires:       sailfishsilica-qt5
 Requires:       qt5-qtsvg-plugin-imageformat-svg
 BuildRequires:  pkgconfig(glib-2.0)
-BuildRequires:  pkgconfig(sailfishapp)
+BuildRequires:  pkgconfig(auroraapp)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Svg)
@@ -34,7 +34,7 @@ FBReader-based e-book reader.
 %setup -q -n %{name}-%{version}
 
 %build
-%qtc_qmake5 harbour-books.pro
+%qtc_qmake5 %{name}.pro
 %qtc_make %{?_smp_mflags}
 
 %install
@@ -45,6 +45,14 @@ cd app
 desktop-file-install --delete-original \
   --dir %{buildroot}%{_datadir}/applications \
    %{buildroot}%{_datadir}/applications/*.desktop
+
+for size in 86 108 128 172
+do
+   mkdir -p %{buildroot}%{_datadir}/icons/hicolor/${size}x${size}/apps/
+   rsvg-convert --width=$size --height=$size --output \
+           %{buildroot}%{_datadir}/icons/hicolor/${size}x${size}/apps/%{name}.png \
+          %{_sourcedir}/../app/icons/harbour-books.svg
+done
 
 %check
 make -C test test

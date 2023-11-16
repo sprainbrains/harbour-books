@@ -1,4 +1,5 @@
-NAME = books
+NAME = harbour.books
+ORIGINAL_NAME = books
 
 openrepos {
     PREFIX = openrepos
@@ -7,9 +8,10 @@ openrepos {
     PREFIX = harbour
 }
 
-TARGET = $${PREFIX}-$${NAME}
-CONFIG += sailfishapp link_pkgconfig
-PKGCONFIG += sailfishapp mlite5 glib-2.0
+PREFIX = org.monich
+TARGET = $${PREFIX}.$${NAME}
+CONFIG += auroraapp link_pkgconfig
+PKGCONFIG += auroraapp mlite5 glib-2.0
 
 app_settings {
     # This path is hardcoded in jolla-settings
@@ -51,7 +53,7 @@ LIBS += \
 
 OTHER_FILES += \
   icons/harbour-books.svg \
-  *.desktop \
+  $${TARGET}.desktop \
   qml/*.qml \
   qml/*.js \
   qml/images/* \
@@ -231,20 +233,6 @@ qml_components.files = $${HARBOUR_QML_COMPONENTS}
 qml_components.path = /usr/share/$${TARGET}/qml/harbour
 INSTALLS += qml_components
 
-# Icons
-ICON_SIZES = 86 108 128 172 256
-for(s, ICON_SIZES) {
-    icon_target = icon$${s}
-    icon_dir = icons/$${s}x$${s}
-    $${icon_target}.files = $${icon_dir}/$${TARGET}.png
-    $${icon_target}.path = /usr/share/icons/hicolor/$${s}x$${s}/apps
-    equals(PREFIX, "openrepos") {
-        $${icon_target}.extra = cp $${icon_dir}/harbour-$${NAME}.png $$eval($${icon_target}.files)
-        $${icon_target}.CONFIG += no_check_exist
-    }
-    INSTALLS += $${icon_target}
-}
-
 settings_qml.files = settings/*.qml
 settings_qml.path = /usr/share/$${TARGET}/settings/
 INSTALLS += settings_qml
@@ -273,7 +261,7 @@ defineTest(addTrFile) {
     export(OTHER_FILES)
 
     in = $${_PRO_FILE_PWD_}/$${rel}
-    out = $${OUT_PWD}/translations/$${PREFIX}-$${1}
+    out = $${OUT_PWD}/translations/$${PREFIX}.harbour.$${1}
 
     s = $$replace(1,-,_)
     lupdate_target = lupdate_$$s
@@ -301,7 +289,7 @@ defineTest(addTrFile) {
 
 LANGUAGES = de fi hu nl pl pt ru sv es zh_CN
 
-addTrFile($${NAME})
+addTrFile($${ORIGINAL_NAME})
 for(l, LANGUAGES) {
-    addTrFile($${NAME}-$$l)
+    addTrFile($${ORIGINAL_NAME}-$$l)
 }

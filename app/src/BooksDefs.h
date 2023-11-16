@@ -41,7 +41,7 @@
 #  define BOOKS_APP_NAME        "openrepos-books"
 #  define BOOKS_SETTINGS_MENU   false
 #else
-#  define BOOKS_APP_NAME        "harbour-books"
+#  define BOOKS_APP_NAME        "org.monich.harbour.books"
 #  define BOOKS_SETTINGS_MENU    true
 #endif
 

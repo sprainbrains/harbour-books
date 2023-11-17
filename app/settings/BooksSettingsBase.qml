@@ -64,11 +64,11 @@ Page {
         var parts = Qt.resolvedUrl("dummy").split('/')
         if (parts.length > 2) {
             var name = parts[parts.length-3]
-            if (name.indexOf("-books") >= 0) {
+            if (name.indexOf(".books") >= 0) {
                 return name
             }
         }
-        return "harbour-books"
+        return "org.monich.harbour.books"
     }
 
     Loader {

@@ -18,6 +18,5 @@ X-Nemo-Application-Type=silica-qt5
 Permissions=Documents;Downloads;RemovableMedia;Audio
 OrganizationName=org.monich
 ApplicationName=harbour.books
-ExportDBusInterfaces=org.monich.harbour.books
-ExecDBus=/usr/bin/invoker --type=silica-qt5 --desktop-file=org.monich.harbour.books.desktop -n -d 5 /usr/bin/org.monich.harbour.books
+ExecDBus=/usr/bin/org.monich.harbour.books %u
 

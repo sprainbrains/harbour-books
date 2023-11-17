@@ -22,6 +22,7 @@ BuildRequires:  file-devel
 BuildRequires:  bzip2-devel
 BuildRequires:  desktop-file-utils
 BuildRequires:  qt5-qttools-linguist
+BuildRequires:  librsvg-tools
 
 %{!?qtc_qmake5:%define qtc_qmake5 %qmake5}
 %{!?qtc_make:%define qtc_make make}

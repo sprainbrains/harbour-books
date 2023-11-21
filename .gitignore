@@ -12,3 +12,4 @@ org.monich.harbour.books*.qm
 org.monich.harbour.books*.ts
 org.monich.harbour.books
 RPMS/
+.DS_Store

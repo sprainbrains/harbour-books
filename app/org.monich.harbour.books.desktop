@@ -10,7 +10,7 @@ Name[pt_BR]=Livros
 Name[ru]=Книги
 Name[sv]=Böcker
 Comment=E-Book Reader
-Exec=/usr/bin/org.monich.harbour.books
+Exec=org.monich.harbour.books
 Icon=org.monich.harbour.books
 X-Nemo-Application-Type=silica-qt5
 
@@ -18,4 +18,5 @@ X-Nemo-Application-Type=silica-qt5
 Permissions=Documents;Downloads;RemovableMedia;Audio
 OrganizationName=org.monich
 ApplicationName=harbour.books
-ExecDBus=/usr/bin/org.monich.harbour.books %u
+ExecDBus=/usr/bin/org.monich.harbour.books
+

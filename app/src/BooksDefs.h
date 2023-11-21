@@ -45,6 +45,7 @@
 #  define BOOKS_SETTINGS_MENU    true
 #endif
 
+#define BOOKS_SETTINGS_PATH     "org.monich/harbour.books"
 #define BOOKS_DBUS_SERVICE      BOOKS_DBUS_INTERFACE
 #define BOOKS_DCONF_ROOT        "/apps/" BOOKS_APP_NAME "/"
 #define BOOKS_DATA_ROOT         "usr/share/" BOOKS_APP_NAME

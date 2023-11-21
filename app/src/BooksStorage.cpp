@@ -104,6 +104,7 @@ BooksStorage::Private::Private(
 {
     QString cfgDir;
     cfgDir = QString::fromStdString(ZLibrary::ApplicationWritableDirectory());
+    cfgDir.replace(QString(BOOKS_APP_NAME),QString(BOOKS_SETTINGS_PATH));
     if (!cfgDir.endsWith('/')) cfgDir += '/';
     QString subDir;
     switch (aType) {

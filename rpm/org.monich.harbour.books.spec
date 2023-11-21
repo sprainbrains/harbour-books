@@ -1,7 +1,7 @@
 Name:           org.monich.harbour.books
 Summary:        E-book reader
 Version:        1.1.5
-Release:        1
+Release:        2
 License:        BSD
 Group:          Applications/File
 URL:            https://github.com/sprainbrains/harbour-books/tree/auroraos
